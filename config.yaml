@@ -1,7 +1,10 @@
 baseURL: 'https://example.org/'
 languageCode: 'en-us'
-title: 'THIS IS FROM CONFIG.TOML - Building a Site and Theme From ther Beginning with AL - A Journey'
+title: 'Building a Hugo Site and Theme From ther Beginning with AL - A Journey'
 theme: 'my-theme'
+
+params:
+  wordsPerMinute: 200  # Adjust this value to customize reading speed - 260 is the average reading speed
 
 taxonomies:
   category: 'categories'
@@ -23,8 +26,3 @@ menu:
       name: About
       url: "/about/"
       weight: 3
-      
-    - identifier: contact
-      name: Contact
-      url: "/contact/"
-      weight: 4

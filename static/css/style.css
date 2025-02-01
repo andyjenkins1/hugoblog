@@ -256,3 +256,12 @@ img {
 .blog-navigation a:hover {
     text-decoration: underline;
 }
+.blog-meta p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.blog-meta p:first-of-type {
+    font-weight: bold;
+}

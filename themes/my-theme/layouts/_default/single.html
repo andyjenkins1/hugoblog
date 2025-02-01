@@ -2,8 +2,16 @@
 <article class="blog-post">
     <h1>{{ .Title }}</h1>
     
-    <div class="blog-meta">
+    <div class="blog-meta"> </div>
+       
         <p>Published: {{ .Date | time.Format "January 2, 2006" }}</p>
+      
+        {{ $words := .WordCount }}
+        {{ $wpm := .Site.Params.wordsPerMinute | default 200 }}
+        {{ $readTime := div (add $words $wpm) $wpm | math.Ceil }}
+
+        <p>📖 Estimated Read Time: {{ $readTime }} minutes</p>
+
         {{ with .Params.categories }}
         <p>Categories: 
             {{ range . }}
