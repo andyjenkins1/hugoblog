@@ -16,7 +16,7 @@
                     <h2 class="blog-title">
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h2>
-                    <p class="blog-date">📅 {{ .Date.Format "Jan 2, 2006" }}</p>
+                    <p class="blog-date">📅 {{ .Date.Format site.Params.dateFormat }}</p>
                 
                     {{ with .Params.categories }}
                         <p class="blog-categories">

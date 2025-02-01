@@ -4,7 +4,7 @@
     
     <div class="blog-meta">
         {{ with .Date }}
-            <p>📅 Published on: {{ .Format "Jan 2, 2006" }}</p>
+            <p>📅 Published on: {{ .Format site.Params.dateFormat }}</p>
         {{ else }}
             <p>📅 Published on: Unknown</p>
         {{ end }}

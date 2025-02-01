@@ -5,6 +5,7 @@ theme: 'my-theme'
 
 params:
   wordsPerMinute: 200  # Adjust this value to customize reading speed - 260 is the average reading speed
+  dateFormat: "02-01-2006"  # Date format for posts
 
 taxonomies:
   category: 'categories'
