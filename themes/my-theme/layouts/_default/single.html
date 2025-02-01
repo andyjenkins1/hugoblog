@@ -1,7 +1,9 @@
-<!-- themes/my-theme/layouts/_default/single.html -->
 {{ define "main" }}
 <article>
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
+    <h1>{{ .Title }}</h1>
+    <p><strong>Published:</strong> {{ .Date | time.Format "January 2, 2006" }}</p>
+    <div>
+        {{ .Content | safeHTML }}
+    </div>
 </article>
 {{ end }}

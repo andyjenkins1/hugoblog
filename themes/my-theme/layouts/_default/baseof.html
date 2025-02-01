@@ -1,12 +1,16 @@
-<!-- themes/my-theme/layouts/_default/baseof.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{{ .Title }}</title>
-  {{ block "head" . }}{{ end }}
+    <meta charset="UTF-8">
+    <title>{{ .Title }}</title>
 </head>
 <body>
-  {{ block "main" . }}{{ end }}
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer>
+        <p>© 2025 My Hugo Site</p>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,8 @@
+baseURL: 'https://example.org/'
+languageCode: 'en-us'
+title: 'THIS IS FROM CONFIG.TOML - Building a Site and Theme From ther Beginning with AL - A Journey'
+theme: 'my-theme'
+
+taxonomies:
+  category: 'categories'
+  tag: 'tags'
