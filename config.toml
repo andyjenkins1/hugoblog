@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Building a Site and Theme From ther Beginning with AL - A Journey'
+theme = "my-theme"
