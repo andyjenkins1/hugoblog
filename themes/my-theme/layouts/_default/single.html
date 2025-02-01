@@ -1,9 +1,37 @@
 {{ define "main" }}
-<article>
+<article class="blog-post">
     <h1>{{ .Title }}</h1>
-    <p><strong>Published:</strong> {{ .Date | time.Format "January 2, 2006" }}</p>
-    <div>
-        {{ .Content | safeHTML }}
+    
+    <div class="blog-meta">
+        <p>Published: {{ .Date | time.Format "January 2, 2006" }}</p>
+        {{ with .Params.categories }}
+        <p>Categories: 
+            {{ range . }}
+                <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </p>
+        {{ end }}
+        
+        {{ with .Params.tags }}
+        <p>Tags: 
+            {{ range . }}
+                <a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </p>
+        {{ end }}
+    </div>
+
+    <div class="blog-content">
+        {{ .Content }}
+    </div>
+
+    <div class="blog-navigation">
+        {{ with .PrevInSection }}
+            <a href="{{ .RelPermalink }}">← Previous Post: {{ .Title }}</a>
+        {{ end }}
+        {{ with .NextInSection }}
+            <a href="{{ .RelPermalink }}">Next Post: {{ .Title }} →</a>
+        {{ end }}
     </div>
 </article>
 {{ end }}

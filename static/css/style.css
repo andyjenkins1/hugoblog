@@ -154,3 +154,105 @@ img {
     display: block;
     margin: 10px 0;
 }
+
+/* ===========================================================
+   📝 Custom Styles for Blog Posts
+   =========================================================== */
+
+/* ✅ Blog Post Container */
+.blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Blog Post Title */
+.blog-post h1 {
+    font-size: 2rem;
+    color: #222;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* ✅ Blog Metadata (Date, Categories, Tags) */
+.blog-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.blog-meta a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.blog-meta a:hover {
+    text-decoration: underline;
+}
+
+/* ✅ Blog Post Content */
+.blog-content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* ✅ Blockquotes */
+.blog-content blockquote {
+    border-left: 4px solid #007bff;
+    padding: 15px;
+    margin: 20px 0;
+    background: #f8f9fa;
+    font-style: italic;
+}
+
+/* ✅ Blog Post Images */
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* ✅ Code Blocks */
+.blog-content pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+/* ✅ Inline Code */
+.blog-content code {
+    background: #f8f9fa;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+}
+
+/* ✅ Blog Post Navigation Links */
+.blog-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.blog-navigation a {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.blog-navigation a:hover {
+    text-decoration: underline;
+}
