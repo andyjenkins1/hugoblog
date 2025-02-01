@@ -1,7 +1,8 @@
 ---
-title: "Exploring the Power of Hugo: A Developer's Guide"
-date: 2025-02-02T10:00:00Z
+title: "This is the second Blog Post"
+date: "2025-01-02T10:00:00Z"
 draft: false
+image: "/images/sample-blog.jpg"
 categories:
   - Development
 tags:

@@ -304,3 +304,71 @@ header.shrink {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a soft shadow effect */
     transition: all 0.4s ease-in-out;
 }
+
+
+/* 📝 Simplified Blog List Styles */
+.blog-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blog-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-thumbnail {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Ensure square */
+    object-fit: cover; /* Keep proportions */
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.blog-content {
+    flex: 1;
+}
+
+.blog-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.blog-categories {
+    font-size: 14px;
+}
+
+.blog-categories a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.blog-categories a:hover {
+    text-decoration: underline;
+}
+
+/* Category & Tag Styles */
+.category-tag, .tag {
+    display: inline-block;
+    padding: 3px 8px;
+    margin: 3px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333; /* Dark gray text */
+    text-decoration: none;
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 3px;
+    background: none; /* No background */
+}
+
+.category-tag:hover, .tag:hover {
+    color: #007bff; /* Subtle color change on hover */
+    border-color: #007bff;
+}

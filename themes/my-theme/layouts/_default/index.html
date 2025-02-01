@@ -3,7 +3,7 @@
   <p>This is the homepage of your Hugo site.</p>
   <h2>Recent Posts:</h2>
   <ul>
-    {{ range .Site.RegularPages }}
+    {{ range where .Site.RegularPages "Section" "posts" | first 5 }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>

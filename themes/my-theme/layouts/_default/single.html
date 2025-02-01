@@ -2,30 +2,32 @@
 <article class="blog-post">
     <h1>{{ .Title }}</h1>
     
-    <div class="blog-meta"> </div>
-       
-        <p>Published: {{ .Date | time.Format "January 2, 2006" }}</p>
-      
+    <div class="blog-meta">
+        {{ with .Date }}
+            <p>📅 Published on: {{ .Format "Jan 2, 2006" }}</p>
+        {{ else }}
+            <p>📅 Published on: Unknown</p>
+        {{ end }}
+
         {{ $words := .WordCount }}
         {{ $wpm := .Site.Params.wordsPerMinute | default 200 }}
         {{ $readTime := div (add $words $wpm) $wpm | math.Ceil }}
-
         <p>📖 Estimated Read Time: {{ $readTime }} minutes</p>
 
         {{ with .Params.categories }}
-        <p>Categories: 
-            {{ range . }}
-                <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
-            {{ end }}
-        </p>
+            <p>🏷 Categories: 
+                {{ range . }}
+                    <a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="category-tag">{{ . }}</a>
+                {{ end }}
+            </p>
         {{ end }}
         
         {{ with .Params.tags }}
-        <p>Tags: 
-            {{ range . }}
-                <a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
-            {{ end }}
-        </p>
+            <p>🔖 Tags: 
+                {{ range . }}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+                {{ end }}
+            </p>
         {{ end }}
     </div>
 

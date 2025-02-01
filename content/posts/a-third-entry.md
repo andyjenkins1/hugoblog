@@ -1,6 +1,6 @@
 ---
 title: "Exploring the Power of Hugo: A Developer's Guide"
-date: 2025-02-02T10:00:00Z
+date: "2025-01-01T10:00:00Z"
 draft: false
 categories:
   - Development
