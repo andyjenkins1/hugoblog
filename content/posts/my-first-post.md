@@ -1,7 +1,6 @@
-
 ---
 title: "My First Blog Post"
-date: "2025-02-01T12:00:00+00:00"
+date: 2025-02-01T12:00:00Z
 draft: false
 categories:
   - Hugo
@@ -9,7 +8,6 @@ tags:
   - tutorial
   - custom-theme
 ---
-
 
 # Heading level 1
 ## Heading level 2
@@ -26,11 +24,10 @@ tags:
 - Second item
 - Third item
 
-
-[Duck Duck Go](https://duckduckgo.com)
-![Alt text](image.jpg)
-
 > Dorothy followed her through many of the beautiful rooms in her castle - This is a blockquote
 
 ---
 At the command prompt, type `nano`.
+
+[Duck Duck Go](https://duckduckgo.com)
+![Alt text](image.jpg)
