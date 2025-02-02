@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <h1>Welcome to {{ .Site.Title }}</h1>
+  <p>This is the homepage of your Hugo site.</p>
+  <h2>Recent Posts:</h2>
+  <ul>
+    {{ range where .Site.RegularPages "Section" "posts" | first 5 }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+{{ end }}

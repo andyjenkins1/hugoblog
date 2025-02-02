@@ -1,10 +1,17 @@
 {{ define "main" }}
-  <h1>Welcome to {{ .Site.Title }}</h1>
-  <p>This is the homepage of your Hugo site.</p>
-  <h2>Recent Posts:</h2>
-  <ul>
-    {{ range where .Site.RegularPages "Section" "posts" | first 5 }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-  </ul>
+<section class="hero">
+    <div class="hero-content">
+        <img src="{{ .Site.Params.profileImage | relURL }}" alt="Profile Image" class="profile-image">
+        <h1>{{ .Site.Params.name }}</h1>
+        <p>{{ .Site.Params.bio }}</p>
+        <div class="social-icons">
+            {{ range .Site.Params.social }}
+            <a href="{{ .url }}" target="_blank" class="social-link">
+                <i class="{{ .icon }}"></i>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
 {{ end }}
