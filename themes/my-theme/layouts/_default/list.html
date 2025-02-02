@@ -16,16 +16,23 @@
                     <h2 class="blog-title">
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h2>
-                    <p class="blog-date">📅 {{ .Date.Format site.Params.dateFormat }}</p>
+                    <p class="blog-date">📅 {{ .Date.Day | humanize }} {{ .Date.Format "Jan 2006" }}</p>
                 
-                    {{ with .Params.categories }}
-                        <p class="blog-categories">
-                            🏷 Categories: 
-                            {{ range . }}
-                                <a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="category-tag">{{ . }}</a>
-                            {{ end }}
-                        </p>
-                    {{ end }}
+                    <div class="blog-meta">
+                        {{ with .Params.categories }}
+                            <p class="blog-categories">
+                                🏷 Categories: 
+                                {{ range . }}
+                                    <a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="category-tag">{{ . }}</a>
+                                {{ end }}
+                            </p>
+                        {{ end }}
+                    
+                        {{ $words := .WordCount }}
+                        {{ $wpm := .Site.Params.wordsPerMinute | default 200 }}
+                        {{ $readTime := div (add $words $wpm) $wpm | math.Ceil }}
+                        <p>📖 Estimated Read Time: {{ $readTime }} minutes</p>
+                    </div>
                 </div>
                 {{ end }}
             </div>

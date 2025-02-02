@@ -4,10 +4,10 @@
     
     <div class="blog-meta">
         {{ with .Date }}
-            <p>📅 Published on: {{ .Format site.Params.dateFormat }}</p>
-        {{ else }}
-            <p>📅 Published on: Unknown</p>
-        {{ end }}
+        <p>📅 Published on: {{ .Format "2" | humanize }} {{ .Format "Jan 2006" }}</p>
+    {{ else }}
+        <p>📅 Published on: Unknown</p>
+    {{ end }}
 
         {{ $words := .WordCount }}
         {{ $wpm := .Site.Params.wordsPerMinute | default 200 }}
