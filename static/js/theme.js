@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to update icon
     function updateIcon(theme) {
-        themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+        themeIcon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
     }
 
     updateIcon(savedTheme);

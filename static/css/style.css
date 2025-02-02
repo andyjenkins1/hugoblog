@@ -134,28 +134,27 @@ nav ul li a:hover {
     color: var(--background-color);
 }
 
-/* 🎨 Theme Toggle Button */
+/* 🎨 Theme Toggle Button (With Font Awesome) */
 .theme-toggle {
     background: none;
     border: none;
-    color: var(--foreground-color);
     font-size: 24px;
     cursor: pointer;
     padding: 5px 10px;
-    transition: color 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: color 0.3s ease-in-out;
 }
 
-/* Smooth rotation + fade effect */
-.theme-toggle span {
+/* Smooth rotation + fade effect for icons */
+.theme-toggle i {
     display: inline-block;
     transition: transform 0.6s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 /* Rotate and fade out when switching themes */
-.theme-toggle.rotating span {
+.theme-toggle.rotating i {
     transform: rotate(360deg) scale(1.5);
     opacity: 0;
 }
@@ -256,15 +255,16 @@ body {
     animation: fadeInScale 0.8s ease-in-out;
 }
 
-/* ✅ Footer Links */
-.site-footer a {
+/* ✅ Footer Social Media Icons */
+.site-footer a i {
+    font-size: 20px;
+    margin-right: 10px;
     color: var(--highlight-color);
-    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-.site-footer a:hover {
+.site-footer a:hover i {
     color: var(--primary-color);
-    text-decoration: underline;
 }
 
 /* Ensure footer container aligns properly */

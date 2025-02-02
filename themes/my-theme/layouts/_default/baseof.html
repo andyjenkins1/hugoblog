@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>{{ .Title }}</title>
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="site-wrapper">
@@ -15,7 +16,7 @@
                     {{ end }}
                 </ul>
                 <button id="theme-toggle" class="theme-toggle">
-                    <span id="theme-icon">🌙</span>
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
                 </button>
             </nav>
         </header>
