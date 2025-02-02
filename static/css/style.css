@@ -372,3 +372,71 @@ header.shrink {
     color: #007bff; /* Subtle color change on hover */
     border-color: #007bff;
 }
+
+/* Footer Stlyes */
+
+/* Ensure the page takes full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure the site wrapper grows properly */
+.site-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Content grows to push footer down */
+.content-wrapper {
+    flex-grow: 1;
+}
+
+/* Footer that stays visible at the bottom */
+.site-footer {
+    background-color: #222;
+    color: #fff;
+    text-align: left; /* Ensures text is aligned to the left */
+    font-size: 12px; /* Slightly smaller font size */
+    padding: 6px 12px; /* Reduce padding to make the footer smaller */
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    animation: fadeInScale 0.8s ease-in-out;
+}
+
+/* Ensure the footer content stays within a container */
+.footer-container {
+    max-width: 1200px; /* Adjust width if necessary */
+    margin: 0 auto;
+}
+
+/* Subtle fade-in and scale animation for the footer */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98); /* Less movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Apply animation when the page loads */
+.site-footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    animation: fadeInScale 0.8s ease-in-out;
+}

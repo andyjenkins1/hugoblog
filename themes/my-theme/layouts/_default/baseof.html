@@ -6,23 +6,24 @@
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                {{ range .Site.Menus.main }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                {{ end }}
-            </ul>
-        </nav>
-    </header>
+    <div class="site-wrapper">
+        <header>
+            <nav>
+                <ul>
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        {{ block "main" . }}{{ end }}
-    </main>
+        <main class="content-wrapper">
+            {{ block "main" . }}{{ end }}
+        </main>
+    </div>
 
-    <footer>
-        <p>© 2025 My Hugo Site</p>
-    </footer>
+    {{ partial "footer.html" . }}
+
     <script src="{{ "js/navbar.js" | relURL }}"></script>
 </body>
 </html>
