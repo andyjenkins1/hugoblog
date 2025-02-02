@@ -1,34 +1,62 @@
 /* ===========================================================
-   🌍 Global Styles for My Hugo Blog
-   =========================================================== */
+   🎨 Blowfish-Inspired Color Palette (Accurate Blues)
+=========================================================== */
+:root {
+    --background-color: #0a192f; /* Dark navy blue */
+    --foreground-color: #ffffff; /* White text */
+    --primary-color: #64ffda; /* Cyan accent */
+    --secondary-color: #8892b0; /* Muted steel blue */
+    --highlight-color: #00d1ff; /* Brighter cyan for highlights */
+    --border-color: #233554; /* Darker blue border */
+    --button-bg: #112240; /* Deep blue for buttons */
+    --button-text: #ffffff; /* White text on buttons */
+}
 
-/* ✅ 1. Reset browser default styles for consistency */
+/* ===========================================================
+   🎨 Blowfish-Inspired Light Mode (White Background)
+=========================================================== */
+[data-theme="light"] {
+    --background-color: #ffffff; /* White background */
+    --foreground-color: #1e1e1e; /* Black text */
+    --primary-color: #007acc; /* Blue accent */
+    --secondary-color: #555; /* Dark gray for subtle text */
+    --highlight-color: #0056b3; /* Darker blue for links */
+    --border-color: #ddd; /* Light gray borders */
+    --button-bg: #f0f0f0; /* Light gray buttons */
+    --button-text: #1e1e1e; /* Dark text on buttons */
+}
+
+/* ===========================================================
+   🌍 Global Styles
+=========================================================== */
+
+/* ✅ Reset browser default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ✅ 2. Set the default font, background, and text styling */
+/* ✅ Apply Blowfish-Inspired Theme */
 body {
     font-family: 'Arial', sans-serif;
     font-size: 16px;
-    color: #333; /* Dark gray text */
-    background-color: #fff; /* White background */
+    color: var(--foreground-color);
+    background-color: var(--background-color);
     line-height: 1.6;
     padding: 20px;
 }
 
-/* ✅ 3. Style Headings for a Clean Look */
+/* ✅ Headings */
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    color: #222;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
 h1 {
     font-size: 2rem;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
 }
 
@@ -40,66 +68,46 @@ h3 {
     font-size: 1.5rem;
 }
 
-h4 {
-    font-size: 1.25rem;
-}
-
-h5, h6 {
-    font-size: 1rem;
-}
-
-/* ✅ 4. Paragraph Spacing */
-p {
-    margin-bottom: 15px;
-}
-
-/* ✅ 5. Links */
+/* ✅ Links */
 a {
-    color: #007bff; /* Blue */
+    color: var(--highlight-color);
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
+    color: var(--primary-color);
 }
 
-/* ✅ 6. Lists */
-ul, ol {
-    margin-left: 20px;
-    margin-bottom: 15px;
+/* ✅ Buttons */
+button, .btn {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
 }
 
-ul li, ol li {
-    margin-bottom: 5px;
+button:hover, .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
 }
 
-/* ✅ Sticky Navbar Fix */
-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-    z-index: 1000;
-}
-
-/* ✅ Ensure Page is Scrollable */
-html, body {
-    height: 200vh; /* Ensures enough scroll space */
-    margin: 0;
-    padding: 0;
-}
-
-/* ✅ Navigation Styling */
+/* ===========================================================
+   🏠 Navigation Bar
+=========================================================== */
 nav {
+    background-color: var(--button-bg);
+    padding: 15px;
     display: flex;
-    justify-content: flex-end; /* Keeps menu items aligned to the right */
-    align-items: center;
+    justify-content: flex-end;
 }
 
-/* ✅ Ensure the Navigation Menu is Visible */
 nav ul {
     list-style: none;
     margin: 0;
@@ -112,79 +120,46 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #333;
+    color: var(--foreground-color);
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
     padding: 8px 12px;
     border-radius: 4px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    background-color: #e9ecef;
+    background-color: var(--primary-color);
+    color: var(--background-color);
 }
 
-/* ✅ 8. Blockquotes */
-blockquote {
-    border-left: 4px solid #007bff;
-    padding-left: 15px;
-    margin: 20px 0;
-    color: #555;
-    font-style: italic;
-}
-
-/* ✅ 9. Buttons */
-button, .btn {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
     border: none;
-    border-radius: 5px;
+    color: var(--foreground-color);
+    font-size: 20px;
     cursor: pointer;
-    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
 }
 
-button:hover, .btn:hover {
-    background-color: #0056b3;
-}
-
-/* ✅ 10. Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-
-th {
-    background-color: #007bff;
-    color: white;
-}
-
-/* ✅ 11. Images */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px 0;
+.theme-toggle:hover {
+    color: var(--highlight-color);
 }
 
 /* ===========================================================
-   📝 Custom Styles for Blog Posts
-   =========================================================== */
+   📝 Blog Post Styling
+=========================================================== */
 
 /* ✅ Blog Post Container */
 .blog-post {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -192,22 +167,22 @@ img {
 /* ✅ Blog Post Title */
 .blog-post h1 {
     font-size: 2rem;
-    color: #222;
-    border-bottom: 2px solid #007bff;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-/* ✅ Blog Metadata (Date, Categories, Tags) */
+/* ✅ Blog Metadata */
 .blog-meta {
     font-size: 14px;
-    color: #666;
+    color: var(--secondary-color);
     margin-bottom: 20px;
     font-style: italic;
 }
 
 .blog-meta a {
-    color: #007bff;
+    color: var(--highlight-color);
     text-decoration: none;
 }
 
@@ -215,98 +190,9 @@ img {
     text-decoration: underline;
 }
 
-/* ✅ Blog Post Content */
-.blog-content {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #333;
-}
-
-/* ✅ Blockquotes */
-.blog-content blockquote {
-    border-left: 4px solid #007bff;
-    padding: 15px;
-    margin: 20px 0;
-    background: #f8f9fa;
-    font-style: italic;
-}
-
-/* ✅ Blog Post Images */
-.blog-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-    margin: 20px auto;
-}
-
-/* ✅ Code Blocks */
-.blog-content pre {
-    background: #272822;
-    color: #f8f8f2;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
-}
-
-/* ✅ Inline Code */
-.blog-content code {
-    background: #f8f9fa;
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-family: "Courier New", monospace;
-}
-
-/* ✅ Blog Post Navigation Links */
-.blog-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-}
-
-.blog-navigation a {
-    font-weight: bold;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.blog-navigation a:hover {
-    text-decoration: underline;
-}
-.blog-meta p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.blog-meta p:first-of-type {
-    font-weight: bold;
-}
-
-/* ✅ Default Navbar Style */
-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: #f8f9fa; /* Light background by default */
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-    z-index: 1000;
-    transition: all 0.4s ease-in-out; /* Smooth animation */
-}
-
-/* ✅ Shrunk Navbar (When Scrolling) */
-header.shrink {
-    padding: 10px; /* Reduce padding for a shrinking effect */
-    background-color: rgba(240, 240, 240, 0.95); /* Subtle darker background */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a soft shadow effect */
-    transition: all 0.4s ease-in-out;
-}
-
-
-/* 📝 Simplified Blog List Styles */
+/* ===========================================================
+   📜 Blog List
+=========================================================== */
 .blog-list {
     max-width: 800px;
     margin: 0 auto;
@@ -318,13 +204,13 @@ header.shrink {
     align-items: center;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .blog-thumbnail {
-    width: 100px; /* Adjust as needed */
-    height: 100px; /* Ensure square */
-    object-fit: cover; /* Keep proportions */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 8px;
     margin-right: 15px;
 }
@@ -333,76 +219,15 @@ header.shrink {
     flex: 1;
 }
 
-.blog-date {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.blog-categories {
-    font-size: 14px;
-}
-
-.blog-categories a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-.blog-categories a:hover {
-    text-decoration: underline;
-}
-
-/* Category & Tag Styles */
-.category-tag, .tag {
-    display: inline-block;
-    padding: 3px 8px;
-    margin: 3px;
-    font-size: 14px;
-    font-weight: normal;
-    color: #333; /* Dark gray text */
-    text-decoration: none;
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 3px;
-    background: none; /* No background */
-}
-
-.category-tag:hover, .tag:hover {
-    color: #007bff; /* Subtle color change on hover */
-    border-color: #007bff;
-}
-
-/* Footer Stlyes */
-
-/* Ensure the page takes full height */
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Ensure the site wrapper grows properly */
-.site-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
-}
-
-/* Content grows to push footer down */
-.content-wrapper {
-    flex-grow: 1;
-}
-
-/* Footer that stays visible at the bottom */
+/* ===========================================================
+   🦶 Footer
+=========================================================== */
 .site-footer {
-    background-color: #222;
-    color: #fff;
-    text-align: left; /* Ensures text is aligned to the left */
-    font-size: 12px; /* Slightly smaller font size */
-    padding: 6px 12px; /* Reduce padding to make the footer smaller */
+    background-color: var(--button-bg);
+    color: var(--foreground-color);
+    text-align: left;
+    font-size: 12px;
+    padding: 6px 12px;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -410,17 +235,32 @@ html, body {
     animation: fadeInScale 0.8s ease-in-out;
 }
 
-/* Ensure the footer content stays within a container */
+/* ✅ Footer Links */
+.site-footer a {
+    color: var(--highlight-color);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Ensure footer container aligns properly */
 .footer-container {
-    max-width: 1200px; /* Adjust width if necessary */
+    max-width: 1200px;
     margin: 0 auto;
 }
+
+/* ===========================================================
+   🎬 Animations
+=========================================================== */
 
 /* Subtle fade-in and scale animation for the footer */
 @keyframes fadeInScale {
     from {
         opacity: 0;
-        transform: translateY(10px) scale(0.98); /* Less movement */
+        transform: translateY(10px) scale(0.98);
     }
     to {
         opacity: 1;
@@ -428,10 +268,10 @@ html, body {
     }
 }
 
-/* Apply animation when the page loads */
+/* Apply animation to footer */
 .site-footer {
-    background-color: #222;
-    color: #fff;
+    background-color: var(--button-bg);
+    color: var(--foreground-color);
     text-align: center;
     padding: 20px;
     width: 100%;
