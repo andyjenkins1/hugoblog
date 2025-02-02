@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
 
-    // Update icon based on theme
+    // Function to update icon
     function updateIcon(theme) {
         themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
     }
@@ -18,9 +18,25 @@ document.addEventListener("DOMContentLoaded", () => {
         let currentTheme = document.documentElement.getAttribute("data-theme");
         let newTheme = currentTheme === "dark" ? "light" : "dark";
 
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme); // Save preference
+        // Add a temporary fade effect to the whole page
+        document.body.classList.add("fade-out");
 
-        updateIcon(newTheme);
+        // Add rotation + fade effect to the icon
+        themeIcon.classList.add("rotating");
+
+        setTimeout(() => {
+            // Switch theme
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+            updateIcon(newTheme);
+
+            // Remove fade effect
+            document.body.classList.remove("fade-out");
+
+            // Remove animation class after effect
+            setTimeout(() => {
+                themeIcon.classList.remove("rotating");
+            }, 300); // Delay to match the transition
+        }, 500); // Matches CSS transition time
     });
 });
