@@ -10,16 +10,7 @@
 <body>
     <div class="site-wrapper">
         <header>
-            <nav>
-                <ul>
-                    {{ range .Site.Menus.main }}
-                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                    {{ end }}
-                </ul>
-                <button id="theme-toggle" class="theme-toggle">
-                    <i id="theme-icon" class="fa-solid fa-moon"></i>
-                </button>
-            </nav>
+            {{ partial "nav.html" . }}
         </header>
 
         <main class="content-wrapper">

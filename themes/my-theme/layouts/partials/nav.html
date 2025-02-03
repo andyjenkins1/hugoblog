@@ -1,0 +1,10 @@
+<nav>
+    <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+    <button id="theme-toggle" class="theme-toggle">
+        <i id="theme-icon" class="fa-solid fa-moon"></i>
+    </button>
+</nav>
