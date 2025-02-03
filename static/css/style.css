@@ -420,3 +420,68 @@ body {
     color: var(--primary-color);
     transform: scale(1.2); /* More noticeable hover effect */
 }
+
+/* 🎨 Tag Cloud Styling */
+.tag-cloud {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tag-cloud h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.tag {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.tag:hover {
+    background-color: var(--highlight-color);
+}
+
+/* 🎨 Scroll to Top Button (Refined) */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px; /* ✅ Smaller button */
+    height: 40px; /* ✅ Smaller button */
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* ✅ Slightly smaller arrow */
+    cursor: pointer;
+    opacity: 0.3; /* ✅ More transparent by default */
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+    opacity: 0.8; /* ✅ Less transparent on hover */
+    transform: scale(1.1);
+}
+
+.scroll-to-top.show {
+    opacity: 0.6; /* ✅ More transparent when active */
+    visibility: visible;
+}

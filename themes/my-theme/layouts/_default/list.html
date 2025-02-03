@@ -1,16 +1,21 @@
 {{ define "main" }}
 <section class="blog-container">
     <h1>Blog</h1>
+
+    <!-- 🎨 Blog Grid -->
     <div class="blog-grid">
-        {{ range .Pages }}
+        {{ range sort .Pages "Date" "desc" }}
         <div class="blog-card">
             <a href="{{ .RelPermalink }}">
-                <img src="{{ if .Params.thumbnail }}{{ .Params.thumbnail | relURL }}{{ else }}/images/default-thumbnail.jpg{{ end }}" alt="{{ .Title }}" class="blog-thumbnail">
+                <!-- ✅ Use stock image if no thumbnail is set -->
+                <img src="{{ if .Params.thumbnail }}{{ .Params.thumbnail | relURL }}{{ else }}/images/default-thumbnail.jpg{{ end }}" 
+                     alt="{{ .Title }}" class="blog-thumbnail">
                 <div class="blog-card-content">
                     <h2 class="blog-title">{{ .Title }}</h2>
                     <p class="blog-meta">
                         <i class="fa-regular fa-clock"></i> {{ .ReadingTime }} min read
                     </p>
+                    <!-- ✅ Tags inside the blog card -->
                     <div class="blog-tags">
                         {{ range .Params.tags }}
                             <span class="blog-tag">{{ . }}</span>
@@ -21,5 +26,18 @@
         </div>
         {{ end }}
     </div>
+
+    <!-- 🎨 Browse by Tags (Moved Below the Blog Grid) -->
+    <section class="tag-cloud">
+        <h2>Browse by Tags</h2>
+        <div class="tags">
+            {{ range .Site.Taxonomies.tags }}
+            <a href="{{ .Page.RelPermalink }}" class="tag">
+                {{ .Page.Title }} ({{ .Count }})
+            </a>
+            {{ end }}
+        </div>
+    </section>
+
 </section>
 {{ end }}

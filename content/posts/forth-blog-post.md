@@ -1,6 +1,6 @@
 ---
-title: "Exploring the Power of Hugo: A Developer's Guide"
-date: "2025-01-25T10:00:00Z"
+title: "This is the 4th Blog"
+date: "2025-02-03T10:00:00Z"
 draft: false
 categories:
   - Development
@@ -31,4 +31,3 @@ To install Hugo on your system, run:
 brew install hugo  # MacOS
 choco install hugo # Windows (Chocolatey)
 sudo apt install hugo # Linux (Debian-based)
-

@@ -1,6 +1,6 @@
 ---
 title: "This is the second Blog Post"
-date: "2025-01-02T10:00:00Z"
+date: "2025-01-01T10:00:00Z"
 draft: false
 #image: "/images/sample-blog.jpg"
 thumbnail: /images/sample-blog.jpg
