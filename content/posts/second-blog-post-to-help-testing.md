@@ -2,7 +2,8 @@
 title: "This is the second Blog Post"
 date: "2025-01-02T10:00:00Z"
 draft: false
-# image: "/images/sample-blog.jpg"
+#image: "/images/sample-blog.jpg"
+thumbnail: /images/sample-blog.jpg
 categories:
   - Development
 tags:
