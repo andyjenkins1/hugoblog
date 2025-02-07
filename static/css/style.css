@@ -1,3 +1,8 @@
+/* ✅ Disable transitions during page load */
+.no-transition * {
+    transition: none !important;
+}
+
 /* ===========================================================
    🎨 Blowfish-Inspired Color Palette (Accurate Blues)
 =========================================================== */
@@ -171,60 +176,255 @@ body {
     opacity: 0;
 }
 
-/* 🎨 Smooth Transition for Light/Dark Mode */
-body {
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-}
-
-/* Apply transition to all elements */
-* {
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+/* ✅ Apply transitions only to key elements */
+body, nav, .blog-post, .theme-toggle {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* ===========================================================
    📝 Blog Post Styling
 =========================================================== */
 
-/* ✅ Blog Post Container */
+/* 📝 Typography for Blog Posts Only */
 .blog-post {
-    max-width: 800px;
-    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;   /* ✅ Body Font */
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--foreground-color);
+    letter-spacing: 0.02em;
     padding: 20px;
-    background: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ Blog Post Title */
+/* 🎯 Headings Inside Blog Posts */
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+    font-family: 'Lato', sans-serif;  
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    margin-left: 0;              /* ✅ Ensures headings stay left-aligned */
+    padding-left: 0;
+}
+
 .blog-post h1 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-top: 20px;
 }
 
-/* ✅ Blog Metadata */
-.blog-meta {
-    font-size: 14px;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
+.blog-post h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+.blog-post h3 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+/* ✅ Body Text with Indentation */
+.blog-post p,
+.blog-post ol,
+.blog-post ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+
+    margin-left: 20px;           /* ✅ Indents body text */
+    padding-left: 10px;          /* Optional: adds slight inner padding */
+}
+
+/* ✅ Indentation for Code Blocks in Blog Posts */
+.blog-post pre {
+    margin-left: 20px;           /* ✅ Matches paragraph indentation */
+    padding-left: 10px;          /* Optional: adds inner padding */
+    background-color: #f5f5f5;   /* Light background for contrast */
+    border-left: 4px solid var(--primary-color); /* Optional: colored border */
+    border-radius: 4px;
+    overflow-x: auto;            /* Allows horizontal scroll for long code */
+    padding: 15px;
+    font-family: 'Fira Code', monospace; /* Monospace font for code */
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ✅ Inline Code Styling */
+.blog-post code {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #93c5fd; 
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+/* ✅ Consistent List Styling */
+.blog-post ol,
+.blog-post ul {
+    list-style-position: outside;  /* Keeps bullets/numbers outside the indent */
+    margin-left: 30px;             /* Adjust this for desired indentation */
+    padding-left: 15px;
+}
+
+.blog-post li {
+    margin-bottom: 8px;            /* Adds spacing between list items */
+    line-height: 1.6;
+}
+
+/* 📋 Blockquotes in Blog Posts */
+.blog-post blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
     font-style: italic;
+    color: #555;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 20px 0;
 }
 
-.blog-meta a {
-    color: var(--highlight-color);
-    text-decoration: none;
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+    .blog-post h1 {
+        font-size: 2rem;
+    }
+
+    .blog-post h2 {
+        font-size: 1.6rem;
+    }
+
+    .blog-post p {
+        font-size: 0.95rem;
+    }
 }
 
-.blog-meta a:hover {
-    text-decoration: underline;
+/* 🎨 Code Block Styling with Line Numbers */
+.post-content pre {
+    background: linear-gradient(135deg, #1e293b, #0f172a);  /* Gradient background */
+    color: #e2e8f0;  /* Softer white for text */
+    padding: 20px;
+    overflow-x: auto;
+    border-radius: 10px;
+    font-family: 'Fira Code', 'Source Code Pro', monospace;  /* Modern monospace font */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+    position: relative;  /* For adding optional line numbers */
 }
 
+/* ✅ Inline Code Styling */
+.post-content code {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slight transparency */
+    color: #93c5fd;  /* Light blue */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Source Code Pro', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;  /* Wraps inline code if too long */
+}
+
+/* ✅ Line Numbers (Optional) */
+pre.line-numbers {
+    counter-reset: linenumber;
+    padding-left: 3.5em;  /* Space for line numbers */
+}
+
+pre.line-numbers code {
+    position: relative;
+    display: block;
+    padding-left: 1em;  /* Adjust to create spacing */
+}
+
+pre.line-numbers code::before {
+    counter-increment: linenumber;
+    content: counter(linenumber);
+    position: absolute;
+    left: -2.5em;
+    color: #64748b;
+    text-align: right;
+    padding-right: 10px;
+    user-select: none;  /* Prevent line numbers from being selectable */
+    font-size: 0.9rem;
+}
+
+/* ✅ Scrollbar Styling */
+pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: #334155;
+    border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+    background-color: #475569;
+}
+
+/* Images */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Blockquotes */
+.post-content blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #555;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+/* 🏷️ Tag Styling */
+.post-tags {
+    margin-bottom: 10px;  /* Adds space between tags and the title */
+    display: flex;
+    gap: 8px;             /* Adds space between individual tags */
+}
+
+.tag {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.tag:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 1.8rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .post-content h3 {
+        font-size: 1.3rem;
+    }
+}
 /* ===========================================================
    📜 Blog List
 =========================================================== */
+
 //* 🎨 Blog Page - Updated Card Layout */
 .blog-container {
     max-width: 1200px;

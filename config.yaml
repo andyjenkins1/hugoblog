@@ -1,20 +1,33 @@
+# Base URL of your site
 baseURL: 'https://example.org/'
+
+# Language code for your site
 languageCode: 'en-us'
+
+# Title of your site
 title: 'Building a Hugo Site and Theme From ther Beginning with AL - A Journey'
+
+# Theme to use for your site
 theme: 'my-theme'
 
 params:
+  # Reading speed in words per minute for estimating reading time
   wordsPerMinute: 200  # Adjust this value to customize reading speed - 260 is the average reading speed
+
+  # Date format for posts
   dateFormat: "02-01-2006"  # Date format for posts
 
+  # Author information
   name: "Andy Jenkins"
   bio: "Principal Technology Specialist"
   profileImage: "images/profile.jpg"
 
   blog:
+    # Whether to show thumbnails in the blog
     showThumbnails: "true"
 
   social:
+    # Social media links from the Home Page
     - name: "GitHub"
       url: "https://github.com/yourusername"
       icon: "fa-brands fa-github"
@@ -27,12 +40,24 @@ params:
       url: "https://linkedin.com/in/yourusername"
       icon: "fa-brands fa-linkedin"
 
+# Taxonomies for organizing content
 taxonomies:
   category: 'categories'
   tag: 'tags'
 
+# Configures the rendering of code blocks on the site
+
+#markup:
+ # highlight:
+  #  lineNumbers: true
+   # style: monokai
+    #codeFences: true
+    #guessSyntax: true
+    #noClasses: false
+
 menu:
   main:
+    # Main menu items
     - identifier: home
       name: Home
       url: "/"

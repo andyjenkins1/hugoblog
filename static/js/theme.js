@@ -1,3 +1,12 @@
+// ✅ Disable transitions during initial page load
+document.documentElement.classList.add("no-transition");
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.documentElement.classList.remove("no-transition");
+    }, 50); // ✅ Short delay to re-enable transitions after page load
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     // 🌙 Theme Toggle Elements
     const themeToggle = document.getElementById("theme-toggle");
@@ -9,35 +18,32 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🌙 Load Theme from Local Storage
     const savedTheme = localStorage.getItem("theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
+    updateIcon(savedTheme); // ✅ Set the correct icon on load
 
+    // ✅ Function to Update Theme Icon
     function updateIcon(theme) {
         themeIcon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
     }
-    updateIcon(savedTheme);
 
     // 🌙 Toggle Theme on Click
     if (themeToggle) {
         themeToggle.addEventListener("click", () => {
-            let currentTheme = document.documentElement.getAttribute("data-theme");
-            let newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.body.classList.add("no-transition"); // ✅ Temporarily disable transitions during toggle
 
-            document.body.classList.add("fade-out");
-            themeIcon.classList.add("rotating");
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+            updateIcon(newTheme);
 
             setTimeout(() => {
-                document.documentElement.setAttribute("data-theme", newTheme);
-                localStorage.setItem("theme", newTheme);
-                updateIcon(newTheme);
-                document.body.classList.remove("fade-out");
-
-                setTimeout(() => {
-                    themeIcon.classList.remove("rotating");
-                }, 300);
-            }, 500);
+                document.body.classList.remove("no-transition"); // ✅ Re-enable transitions shortly after
+            }, 50); // Short delay for smooth theme switching
         });
     }
 
-    // 🚀 Scroll to Top Button Logic (Fixed)
+    // 🚀 Scroll to Top Button Logic
     if (scrollButton) {
         window.addEventListener("scroll", () => {
             if (window.scrollY > 50) {

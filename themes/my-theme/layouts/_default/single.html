@@ -1,47 +1,28 @@
 {{ define "main" }}
 <article class="blog-post">
-    <h1>{{ .Title }}</h1>
-    
-    <div class="blog-meta">
-        {{ with .Date }}
-        <p>📅 Published on: {{ .Format "2" | humanize }} {{ .Format "Jan 2006" }}</p>
-    {{ else }}
-        <p>📅 Published on: Unknown</p>
-    {{ end }}
 
-        {{ $words := .WordCount }}
-        {{ $wpm := .Site.Params.wordsPerMinute | default 200 }}
-        {{ $readTime := div (add $words $wpm) $wpm | math.Ceil }}
-        <p>📖 Estimated Read Time: {{ $readTime }} minutes</p>
+    <!-- ✅ Blog Title -->
+    <h1 class="post-title">{{ .Title }}</h1>
 
-        {{ with .Params.categories }}
-            <p>🏷 Categories: 
-                {{ range . }}
-                    <a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="category-tag">{{ . }}</a>
-                {{ end }}
-            </p>
-        {{ end }}
-        
-        {{ with .Params.tags }}
-            <p>🔖 Tags: 
-                {{ range . }}
-                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
-                {{ end }}
-            </p>
-        {{ end }}
-    </div>
+    <!-- ✅ Meta Information -->
+    <p class="post-meta">
+        <i class="fa-regular fa-calendar"></i> {{ .Date.Format "02 January 2006" }}
+        • <i class="fa-regular fa-clock"></i> {{ .ReadingTime }} min read
+    </p>
 
-    <div class="blog-content">
+     <!-- ✅ Tags Just below Title -->
+     {{ if .Params.tags }}
+     <div class="post-tags">
+         {{ range .Params.tags }}
+         <span class="tag">{{ . }}</span>
+         {{ end }}
+     </div>
+     {{ end }}
+
+    <!-- ✅ Blog Content -->
+    <div class="post-content">
         {{ .Content }}
     </div>
 
-    <div class="blog-navigation">
-        {{ with .PrevInSection }}
-            <a href="{{ .RelPermalink }}">← Previous Post: {{ .Title }}</a>
-        {{ end }}
-        {{ with .NextInSection }}
-            <a href="{{ .RelPermalink }}">Next Post: {{ .Title }} →</a>
-        {{ end }}
-    </div>
 </article>
 {{ end }}
