@@ -220,6 +220,8 @@ git config --global gpg.format ssh
 git config --global user.signingkey ~/.ssh/id_ed25519
 git config --global commit.gpgsign true
 
+Very good
+
 # Other Useful Configurations
 
 ## Integrate ChatGPT into VS Code
