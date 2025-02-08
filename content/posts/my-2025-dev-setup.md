@@ -222,6 +222,9 @@ git config --global commit.gpgsign true
 
 Very good
 
+Steps above key for getting verifed CHanges on github
+
+
 # Other Useful Configurations
 
 ## Integrate ChatGPT into VS Code
