@@ -1,0 +1,42 @@
+/* Global Styles (Resets, color palette, typography) → base.css */
+
+/* ✅ Disable transitions during page load */
+.no-transition * {
+    transition: none !important;
+}
+
+/* 🎨 Color Palette */
+:root {
+    --background-color: #0a192f;
+    --foreground-color: #ffffff;
+    --primary-color: #64ffda;
+    --secondary-color: #8892b0;
+    --highlight-color: #00d1ff;
+    --border-color: #233554;
+    --button-bg: #112240;
+    --button-text: #ffffff;
+}
+
+/* ✅ Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ✅ Typography */
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    padding: 20px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}

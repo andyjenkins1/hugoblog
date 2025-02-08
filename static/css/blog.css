@@ -1,0 +1,37 @@
+/* Blog-Specific Styles (Blog posts, code blocks, tags, TOC) → blog.css */
+
+/* ✅ Blog Post Styling */
+.blog-post {
+    font-family: 'Raleway', sans-serif;
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.blog-post h1, .blog-post h2, .blog-post h3 {
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* ✅ Code Blocks */
+pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+}
+
+code {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ✅ Tags */
+.tag {
+    background-color: var(--primary-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}

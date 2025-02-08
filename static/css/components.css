@@ -1,0 +1,38 @@
+/* Components (Buttons, cards, social icons) → components.css */
+
+/* ✅ Buttons */
+button, .btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* ✅ Cards */
+.blog-card {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ✅ Social Icons */
+.social-icons i {
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons i:hover {
+    color: var(--primary-color);
+}
